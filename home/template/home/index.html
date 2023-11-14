@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>This is Home page</h1>
+    <a href="/contact/"> Contact </a>
+    <br>
+    <a href="/about/"> About </a>
+
+    <!-- {{people}} -->
+    <h1>My name is Dilshad Ansari</h1>
+    <p>I am a new developer of django</p>
+    <hr />
+    <h3>What do you say about it?</h3>
+    <h2>You can ask anything as you want to ask.</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam earum
+      reprehenderit nostrum repellendus porro explicabo laborum obcaecati
+      nesciunt dignissimos adipisci?
+    </p>
+
+    <table>
+      <tr>
+        <th>S. No</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Can Vote</th>
+      </tr>
+      {% for people in people%}
+      <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{people.name}}</td>
+        <td>{{people.age}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <p>
+      {% if 'baigann' in text%}
+       Yes Available 
+       {% else %}
+        Not Available 
+        {% endif %}
+    </p>
+    {% endblock %}
